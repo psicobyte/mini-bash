@@ -1,0 +1,51 @@
+#!/bin/bash
+# 
+
+if [[ $1 ]]; then
+	URI=$1
+
+	if [[ $2 ]] && [[ $2 =~ ^[0-9]+$ ]]; then
+                if [[ $3 ]]; then
+			if [[ $3 =~ ^[0-9]+$ ]]; then
+                        	Inicio=$2
+                        	Fin=$3
+				if [[ $4 ]]; then
+					Extension=$4
+				else
+					Extension=""
+				fi
+			else
+				Inicio=1
+                        	Fin=$2
+				Extension=$3
+			fi
+                else
+				Inicio=1
+                        	Fin=$2
+				Extension=""
+                fi
+
+		for i in $(eval echo "{$Inicio..$Fin}"); do
+			#echo $i
+			wget $URI$i$Extension
+		done
+
+        else
+		echo "no ha indicado un rango"
+		echo $2
+	fi
+else
+	echo "USO: wcomic URL PagInicial PagFinal extension"
+	echo "ejemplo: manga http://direcion.com/dir/arch 1 17 .jpg"
+fi
+
+
+
+
+
+
+
+
+
+
+
