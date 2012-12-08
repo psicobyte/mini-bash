@@ -27,7 +27,7 @@ if [[ $1 ]]; then
 
 		for i in $(eval echo "{$Inicio..$Fin}"); do
 			#echo $i
-			wget $URI$i$Extension
+			wget --referer $URI$i$Extension $URI$i$Extension
 		done
 
         else
