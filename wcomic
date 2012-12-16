@@ -52,6 +52,9 @@ if [[ $1 ]]; then
 else
 	echo "USO: wcomic URL PagInicial PagFinal extension"
 	echo "ejemplo: wcomic http://direcion.com/dir/arch 1 17 .jpg"
+	echo "ejemplo: wcomic http://direcion.com/dir/arch 001 017 .jpg"
+	echo "PagInicial es opcional, si no se pone, se supone que se incia con 1, 01 o lo que corresponda."
+	echo "ejemplo: wcomic http://direcion.com/dir/arch 17 .jpg"
 fi
 
 
